@@ -1,10 +1,12 @@
 package com.sinatra;
 
-public class LikeSongsFrankSinatra {
+import org.junit.Test;
+
+public class LikeSongsFrankSinatra extends LikeSongsParent {
 
 
     @Test
-    public void testLike {
+    public void testLike() {
 
         navegarSitio("http://evening-bastion-49392.herokuapp.com/");
         validarHomePage("Welcome to this website all about");
@@ -20,12 +22,11 @@ public class LikeSongsFrankSinatra {
 
     @Test
     public void testLogin() {
-        navegar("https://evening-bastion-49392.herokuapp.com/");
+        navegarSitio("https://evening-bastion-49392.herokuapp.com/");
         validarHomePage();
         realizarLoginCorrecto("frank", "sinatra");
         validarMensajeBienvenida("You are now logged in as frank");
         validarSongsPage();
         cerrarBrowser();
         }
-    }
 }
